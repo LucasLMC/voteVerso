@@ -1,11 +1,13 @@
 import fastify from 'fastify';
-import { createPoll } from './routes/create-polls';
-import { getPolls } from './routes/get-polls';
+import { createPoll } from './routes/create-poll';
+import { getPoll } from './routes/get-poll';
+import { voteOnPoll } from './routes/vote-on-poll';
 
 const app = fastify();
 
 app.register(createPoll);
-app.register(getPolls);
+app.register(getPoll);
+app.register(voteOnPoll);
 
 app.listen({
     port: 3333,
